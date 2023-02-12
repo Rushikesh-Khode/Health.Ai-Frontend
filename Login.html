@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<!-- saved from url=(0048)https://colorlib.com/etc/lf/Login_v11/index.html -->
+<html lang="en">
+
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	<title>Login</title>
+
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+
+	<link rel="icon" type="image/png" href="assets/img/brain icon.svg">
+
+	<link rel="stylesheet" type="text/css" href="./Login V11_files/bootstrap.min.css">
+
+	<link rel="stylesheet" type="text/css" href="./Login V11_files/font-awesome.min.css">
+
+	<link rel="stylesheet" type="text/css" href="./Login V11_files/icon-font.min.css">
+
+	<link rel="stylesheet" type="text/css" href="./Login V11_files/animate.css">
+
+	<link rel="stylesheet" type="text/css" href="./Login V11_files/hamburgers.min.css">
+
+	<link rel="stylesheet" type="text/css" href="./Login V11_files/select2.min.css">
+
+	<link rel="stylesheet" type="text/css" href="./Login V11_files/util.css">
+	<link rel="stylesheet" type="text/css" href="./Login V11_files/main.css">
+
+	<meta name="robots" content="noindex, follow">
+	<script defer="" referrerpolicy="origin" src="./Login V11_files/s.js.download"></script>
+	<script
+		nonce="88ed2cca-b29a-41ed-9c1a-8ee17697914f">(function (w, d) { !function (f, g, h, i) { f[h] = f[h] || {}; f[h].executed = []; f.zaraz = { deferred: [], listeners: [] }; f.zaraz.q = []; f.zaraz._f = function (j) { return function () { var k = Array.prototype.slice.call(arguments); f.zaraz.q.push({ m: j, a: k }) } }; for (const l of ["track", "set", "debug"]) f.zaraz[l] = f.zaraz._f(l); f.zaraz.init = () => { var m = g.getElementsByTagName(i)[0], n = g.createElement(i), o = g.getElementsByTagName("title")[0]; o && (f[h].t = g.getElementsByTagName("title")[0].text); f[h].x = Math.random(); f[h].w = f.screen.width; f[h].h = f.screen.height; f[h].j = f.innerHeight; f[h].e = f.innerWidth; f[h].l = f.location.href; f[h].r = g.referrer; f[h].k = f.screen.colorDepth; f[h].n = g.characterSet; f[h].o = (new Date).getTimezoneOffset(); if (f.dataLayer) for (const s of Object.entries(Object.entries(dataLayer).reduce(((t, u) => ({ ...t[1], ...u[1] }))))) zaraz.set(s[0], s[1], { scope: "page" }); f[h].q = []; for (; f.zaraz.q.length;) { const v = f.zaraz.q.shift(); f[h].q.push(v) } n.defer = !0; for (const w of [localStorage, sessionStorage]) Object.keys(w || {}).filter((y => y.startsWith("_zaraz_"))).forEach((x => { try { f[h]["z_" + x.slice(7)] = JSON.parse(w.getItem(x)) } catch { f[h]["z_" + x.slice(7)] = w.getItem(x) } })); n.referrerPolicy = "origin"; n.src = "/cdn-cgi/zaraz/s.js?z=" + btoa(encodeURIComponent(JSON.stringify(f[h]))); m.parentNode.insertBefore(n, m) };["complete", "interactive"].includes(g.readyState) ? zaraz.init() : f.addEventListener("DOMContentLoaded", zaraz.init) }(w, d, "zarazData", "script"); })(window, document);</script>
+</head>
+
+<body data-aos-easing="ease-in-out" data-aos-duration="1000" data-aos-delay="0" onload="autoFill()">
+	<div class="limiter">
+		<div class="container-login100">
+			<div class="wrap-login100 p-l-50 p-r-50 p-t-77 p-b-30">
+				<form class="login100-form" data-bitwarden-watching="1" method="post" onsubmit="return false">
+					<span class="login100-form-title p-b-55">
+						Login
+					</span>
+					<div class="wrap-input100 m-b-16 ">
+						<input class="input100" type="text" name="email" placeholder="Email" id="email">
+						<span class="focus-input100"></span>
+						<span class="symbol-input100">
+							<span class="lnr lnr-envelope"></span>
+						</span>
+					</div>
+					<div class="wrap-input100 m-b-16 ">
+						<input class="input100" type="password" name="pass" placeholder="Password" id="password">
+						<span class="focus-input100"></span>
+						<span class="symbol-input100">
+							<span class="lnr lnr-lock"></span>
+						</span>
+					</div>
+					<div class="container-login100-form-btn p-t-25">
+						<button class="login100-form-btn" onclick="login()">
+							Login
+						</button>
+					</div>
+					<div class="text-center w-full p-t-115">
+						<span class="txt1">
+							Not a member?
+						</span>
+						<a class="txt1 bo1 hov1" href="Registration.html">
+							Sign up now
+						</a>
+					</div>
+				</form>
+			</div>
+		</div>
+	</div>
+
+	<script src="./Login V11_files/jquery-3.2.1.min.js.download"></script>
+
+	<!-- <script src="./Login V11_files/popper.js.download"></script> -->
+	<script src="./Login V11_files/bootstrap.min.js.download"></script>
+
+	<script src="./Login V11_files/select2.min.js.download"></script>
+
+	<script src="./Login V11_files/main.js.download"></script>
+
+	<script async="" src="./Login V11_files/js"></script>
+
+	<!-- in house development -->
+	<script src="/js/api/user/api.js"></script>
+	<script src="js/apiClient.js"></script>
+	<script src="js/utils.js"></script>
+
+	<script>
+		window.dataLayer = window.dataLayer || [];
+		function gtag() { dataLayer.push(arguments); }
+		gtag('js', new Date());
+
+		gtag('config', 'UA-23581568-13');
+	</script>
+	<script defer="" src="./Login V11_files/vaafb692b2aea4879b33c060e79fe94621666317369993"
+		integrity="sha512-0ahDYl866UMhKuYcW078ScMalXqtFJggm7TmlUtp0UlD4eQk0Ixfnm5ykXKvGJNFjLMoortdseTfsRT8oCfgGA=="
+		data-cf-beacon="{&quot;rayId&quot;:&quot;7983c6332d1ea92f&quot;,&quot;token&quot;:&quot;cd0b4b3a733644fc843ef0b185f98241&quot;,&quot;version&quot;:&quot;2022.11.3&quot;,&quot;si&quot;:100}"
+		crossorigin="anonymous"></script>
+
+</body>
+
+</html>
