@@ -1,4 +1,4 @@
-const prefixUrl = "https://web-production-f284.up.railway.app";
+const prefixUrl = "https://web-production-f284.up.railway.app/";
 
 
 const requestJson = async (method, url, body) => {
