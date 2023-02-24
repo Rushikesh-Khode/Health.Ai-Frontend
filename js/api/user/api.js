@@ -2,7 +2,7 @@
 const autoFill = () => {
     const email = getLocalStorageValue("email")
     console.log(email);
-    if (email !== "undefined") {
+    if ( email && email !== "undefined") {
         document.getElementById("email").value = email
     }
 }
@@ -60,7 +60,7 @@ const register = async () => {
     //TODO: remove alert
     alert("Registraion Sucessful")
 
-    window.location.href = "/login.html"
+    window.location.href = "/Health.Ai-Frontend/login.html"
 }
 
 const logout = async () => {
@@ -70,7 +70,7 @@ const logout = async () => {
     setLocalStorage("email", undefined)
     setLocalStorage("x-auth-token", undefined)
 
-    window.location.href = "/index.html"
+    window.location.href = "/Health.Ai-Frontend/index.html"
 }
 
 const validate = () => {
@@ -78,7 +78,7 @@ const validate = () => {
     const x_token = getLocalStorageValue("x-auth-token")
 
     if (email === "undefined" || x_token === "undefined") {
-        window.location.href = "/index.html"
+        window.location.href = "/Health.Ai-Frontend/index.html"
         return
     }
 }
