@@ -27,7 +27,7 @@ const login = async () => {
     //TODO: remove alert
     alert("Login sucessful")
 
-    window.location.href = "/dashboard.html"
+    window.location.href = "/Health.Ai-Frontend/dashboard.html"
 }
 
 const register = async () => {
