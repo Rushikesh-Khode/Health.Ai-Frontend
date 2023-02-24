@@ -77,7 +77,7 @@ const validate = () => {
     const email = getLocalStorageValue("email")
     const x_token = getLocalStorageValue("x-auth-token")
 
-    if (email === "undefined" || x_token === "undefined") {
+    if (!email || !x_token ||email === "undefined" || x_token === "undefined") {
         window.location.href = "/Health.Ai-Frontend/index.html"
         return
     }
