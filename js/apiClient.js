@@ -1,4 +1,4 @@
-const prefixUrl = "http://127.0.0.1:8000/";
+const prefixUrl = "https://web-production-f284.up.railway.app";
 
 
 const requestJson = async (method, url, body) => {
