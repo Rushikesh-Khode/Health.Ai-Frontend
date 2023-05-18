@@ -35,7 +35,7 @@ async function upload() {
 
                 var image = document.createElement("img");
                 image.setAttribute("src", base64Image);
-                image.setAttribute("width",612)
+                image.setAttribute("width", 612)
 
                 resultBox.replaceChildren(...[title, pred])
                 resultImage.replaceChildren(...[image])

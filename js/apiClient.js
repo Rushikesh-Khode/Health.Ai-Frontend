@@ -1,4 +1,4 @@
-const prefixUrl = "https://web-production-f284.up.railway.app/";
+const prefixUrl = env.ENV == "DEV" ? env.LOCAL_API_SERVER : env.PRODUCTION_API_SERVER;
 
 
 const requestJson = async (method, url, body) => {
