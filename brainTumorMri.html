@@ -2,6 +2,7 @@
 <html lang="en">
 
 <head>
+  <script src="js/envinment.js"></script>
   <script src="js/apiClient.js"></script>
   <script src="js/utils.js">  </script>
   <script src="js/api/user/api.js"></script>
@@ -133,14 +134,34 @@
     <label for="file-upload" class="custom-file-upload">
       <i class="fa fa-cloud-upload"></i> Click to Upload Brain MRI Image
     </label>
-    <input id="file-upload" type="file" onchange="upload()" accept=".jpg" >
+    <input id="file-upload" type="file" onchange="upload()" accept=".jpg">
 
-    <div class="card" id="card">
-      <div class="img" id="result_image">
-      </div>
-      <div class="text" id="result">
+    <table id="card" hidden style="width: 50%;margin-left: auto;
+    margin-right: auto;">
+      <tr>
+        <td>
+          <h2>Uploaded Image</h2>
+        </td>
+        <td id="result_image">
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <h2>Model Prediction</h2>
+        </td>
+        <td id="result">
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <h2>Confidance</h2>
+        </td>
+        <td id="confidance">
+        </td>
+      </tr>
+    </table>
 
-      </div>
+    </div>
     </div>
   </center>
 

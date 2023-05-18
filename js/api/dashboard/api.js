@@ -1,7 +1,6 @@
 
 async function upload() {
-    const resultCard = document.getElementById("card")
-    resultCard.style.display = "none"
+    hideTable()
     const image = document.getElementById("file-upload").files[0]
     const size = (image.size / 1024 / 1024).toFixed(2);
 
@@ -20,25 +19,28 @@ async function upload() {
             if ("error" in response) {
                 alert(response["error"])
             } else {
-                resultCard.style.display = "block"
+                showTable()
                 const result = getMaxValueClass(response['prediction'])
                 const resultBox = document.getElementById("result")
                 const resultImage = document.getElementById("result_image")
+                const confidance = document.getElementById("confidance")
 
                 const title = document.createElement("h1")
                 const titleText = document.createTextNode(result[0].toUpperCase())
                 title.appendChild(titleText)
 
                 const pred = document.createElement("h2")
-                const predText = document.createTextNode("Confidance = " + (result[1] * 100).toFixed(2) + "%")
+                const predText = document.createTextNode(""+ (result[1] * 100).toFixed(2) + "%")
                 pred.appendChild(predText)
 
                 var image = document.createElement("img");
                 image.setAttribute("src", base64Image);
                 image.setAttribute("width", 612)
+                image.setAttribute("height", 612)
 
-                resultBox.replaceChildren(...[title, pred])
+                resultBox.replaceChildren(...[title])
                 resultImage.replaceChildren(...[image])
+                confidance.replaceChildren(...[pred])
 
             }
         }
@@ -65,4 +67,14 @@ function getMaxValueClass(result) {
         }
     }
     return [maxClass, maxValue]
+}
+
+function showTable(){
+    const resultCard = document.getElementById("card")
+    resultCard.style.display = "block"
+}
+
+function hideTable(){
+    const resultCard = document.getElementById("card")
+    resultCard.style.display = "none"
 }

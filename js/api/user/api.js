@@ -12,7 +12,6 @@ const login = async () => {
     const password = document.getElementById("password").value
 
     //TODO: add validation for frontend
-
     const response = await requestJson("POST", "users/login.json", { "email": email, "password": password })
 
     if ("error" in response) {
@@ -24,10 +23,7 @@ const login = async () => {
     window.localStorage["x-auth-token"] = response["x-auth-token"]
     window.localStorage["email"] = response["email"]
 
-    //TODO: remove alert
-    alert("Login sucessful")
-
-    window.location.href = "/Health.Ai-Frontend/dashboard.html"
+    window.location.href = "/dashboard.html"
 }
 
 const register = async () => {
@@ -60,7 +56,7 @@ const register = async () => {
     //TODO: remove alert
     alert("Registraion Sucessful")
 
-    window.location.href = "/Health.Ai-Frontend/login.html"
+    window.location.href = "/login.html"
 }
 
 const logout = async () => {
@@ -70,7 +66,7 @@ const logout = async () => {
     setLocalStorage("email", undefined)
     setLocalStorage("x-auth-token", undefined)
 
-    window.location.href = "/Health.Ai-Frontend/index.html"
+    window.location.href = "/index.html"
 }
 
 const validate = () => {
@@ -78,7 +74,7 @@ const validate = () => {
     const x_token = getLocalStorageValue("x-auth-token")
 
     if (!email || !x_token || email === "undefined" || x_token === "undefined") {
-        window.location.href = "/Health.Ai-Frontend/index.html"
+        window.location.href = "/index.html"
         return
     }
 }

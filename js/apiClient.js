@@ -1,8 +1,7 @@
 const prefixUrl = env.ENV == "DEV" ? env.LOCAL_API_SERVER : env.PRODUCTION_API_SERVER;
 
-
 const requestJson = async (method, url, body) => {
-    const response = (await fetch(prefixUrl + url, {
+    let response = (await fetch(prefixUrl + url, {
         method: method,
         body: JSON.stringify(body),
         headers: {
@@ -14,7 +13,16 @@ const requestJson = async (method, url, body) => {
             alert("server error")
         }
     }
-    )).json()
+    ))
+
+    console.log(response);
+
+    if (!response) {
+        alert("Internal server error")
+        return
+    }
+
+    response = response.json()
 
     if ("error" in response) {
         alert(response["error"])
@@ -22,5 +30,4 @@ const requestJson = async (method, url, body) => {
     }
 
     return response
-
 }
