@@ -187,14 +187,13 @@ input[type="file"] {
 .custom-file-upload {
   border: 1px solid #ccc;
   display: inline-block;
-  padding: 6px 12px;
-  padding-top: 2.5rem;
   cursor: pointer;
   margin-top: 5rem;
   width: 40rem;
   height: 5rem;
   font-size: xx-large;
-  background-color: #0ad4f36e;
+  background-color: #00ddff;
   border-radius: 5%;
-  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  color: black;
+  font-family: 'Times New Roman', Times, serif;
 }
