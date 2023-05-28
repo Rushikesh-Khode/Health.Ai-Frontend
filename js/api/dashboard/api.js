@@ -1,8 +1,9 @@
 
-async function upload() {
+async function upload(forcePush = false) {
     hideNotice()
     showLoader()
     hideTable()
+    hideForcePush()
     const image = document.getElementById("file-upload").files[0]
     const size = (image.size / 1024 / 1024).toFixed(2);
 
@@ -18,10 +19,18 @@ async function upload() {
             const base64Image = fileReader.result
             const response = await requestJson("POST", "brain-tumor-classification/predict.json", {
                 "image": base64Image,
+                "forcePush": forcePush,
             })
+
             if ("error" in response) {
                 alert(response["error"])
-            } else {
+            }
+            else if (response['prediction'] === 'Not Valid Mri Image') {
+                hideLoader()
+                showForcePush()
+                return 0;
+            }
+            else {
                 showTable()
                 hideLoader()
                 const result = getMaxValueClass(response['prediction'])
@@ -101,5 +110,16 @@ function showNotice() {
 
 function hideNotice() {
     const notice = document.getElementById("notice")
+    notice.style.display = "none"
+}
+
+function showForcePush() {
+    hideNotice()
+    const notice = document.getElementById("force-push-dialog")
+    notice.style.display = "block"
+}
+
+function hideForcePush() {
+    const notice = document.getElementById("force-push-dialog")
     notice.style.display = "none"
 }
