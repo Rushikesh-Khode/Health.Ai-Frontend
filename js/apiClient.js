@@ -11,6 +11,7 @@ const requestJson = async (method, url, body) => {
     }).catch((error) => {
         if (error) {
             alert("server error")
+            hideLoader()
         }
     }
     ))
@@ -19,6 +20,7 @@ const requestJson = async (method, url, body) => {
 
     if (!response) {
         alert("Internal server error")
+        hideLoader()
         return
     }
 

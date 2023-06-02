@@ -12,7 +12,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Health.Ai</title>
   <link href="assets/img/brain icon.svg" rel="icon">
-  <link rel="stylesheet" href="assets/css/card.css">
+  <!-- <link rel="stylesheet" href="assets/css/card.css"> --->
   <link rel="stylesheet" href="style.css">
 
   <style>
@@ -175,25 +175,67 @@
 
 
     #force-push-button {
-    background-color: #4CAF50;
-    color: white; 
-    padding: 10px 20px; 
-    border: none; 
-    cursor: pointer; 
-    border-radius: 4px;
-    font-size: 16px; 
-    width: 150px;
-  }
+      background-color: #4CAF50;
+      color: white;
+      padding: 10px 20px;
+      border: none;
+      cursor: pointer;
+      border-radius: 4px;
+      font-size: 16px;
+      width: 150px;
+    }
 
-  /* Hover effect */
-  #force-push-button:hover {
-    background-color: #45a049; /* Darker green background color on hover */
-  }
+    /* Hover effect */
+    #force-push-button:hover {
+      background-color: #45a049;
+      /* Darker green background color on hover */
+    }
 
-  /* Button click effect */
-  #force-push-button:active {
-    background-color: #3e8e41; /* Even darker green background color when clicked */
-  }
+    /* Button click effect */
+    #force-push-button:active {
+      background-color: #3e8e41;
+      /* Even darker green background color when clicked */
+    }
+
+    .toggle-switch {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .toggle-switch input[type="radio"] {
+      display: none;
+    }
+
+    .toggle-switch label {
+      background-color: #ccc;
+      padding: 8px 16px;
+      margin-right: 4px;
+      border-radius: 4px;
+      cursor: pointer;
+    }
+
+    .toggle-switch input[type="radio"]:checked+label {
+      background-color: #04cdec;
+      color: #fff;
+    }
+
+    .model-details {
+      display: none;
+    }
+
+    .model-details h3 {
+      font-size: 25px;
+    }
+
+    .model-details p {
+      font-size: 25px;
+    }
+
+    #model1:checked~.model-info #model1-info,
+    #model2:checked~.model-info #model2-info {
+      display: block;
+    }
   </style>
 </head>
 
@@ -235,6 +277,26 @@
 
     </ul>
   </nav>
+  <center>
+
+    <div class="toggle-switch">
+      <input type="radio" id="model1" name="model" checked>
+      <label for="model1">Model 1</label>
+      <input type="radio" id="model2" name="model">
+      <label for="model2">Model 2</label>
+      <!-- </div> -->
+
+      <div class="model-info">
+        <div id="model1-info" class="model-details">
+          <p>This Model Can Detect Only 3 Types of Tumor With High Accuracy.</p>
+        </div>
+        <div id="model2-info" class="model-details">
+          <p>This Model Can Detect 17 Types of Tumor With Low Accuracy.</p>
+        </div>
+      </div>
+
+
+  </center>
 
   <center>
     <button class="custom-file-upload" onclick="showNotice()">Upload Image</button>
@@ -274,46 +336,62 @@
         <i class="fa fa-cloud-upload"></i>I have read and agree to the terms and conditions, Continue
       </label>
       <input id="file-upload" type="file" onchange="upload()" accept=".jpg">
+      <br>
     </div>
 
 
     <div class="loader" id="loader"></div>
     <div id="force-push-dialog" hidden>
       <h1>The image does not appear to be an MRI image. 🤔</h1>
-      <p style="font-size: larger;">Thinks Model Prediction Is Wrong!😅<br> Don't Worry You Can Still Force Image To Be Detected By The ML Model Just Click The Below Button.
+      <p style="font-size: larger;">Thinks Model Prediction Is Wrong!😅<br> Don't Worry You Can Still Force Image To Be
+        Detected By The ML Model Just Click The Below Button.
       </p>
       <p style="font-size: larger;">
-        Please note that this middle layer acts as an intermediary between you and the ML model.<br> Its purpose is to prevent unnecessary predictions and minimize server load. As a lightweight and basic model, its accuracy may vary
+        Please note that this middle layer acts as an intermediary between you and the ML model.<br> Its purpose is to
+        prevent unnecessary predictions and minimize server load. As a lightweight and basic model, its accuracy may
+        vary
       </p>
       <button id="force-push-button" onclick="upload(true)">Force Push</button>
     </div>
   </center>
 
+
+
   <center>
-  <table id="card" hidden style="width: 30%; margin-left: auto;margin-right: auto; padding-top: 3%;">
-    <tr>
-      <td>
-        <h2>Uploaded Image</h2>
-      </td>
-      <td id="result_image">
-      </td>
-    </tr>
-    <tr>
-      <td>
-        <h2>Model Prediction</h2>
-      </td>
-      <td id="result"></td>
-      </td>
-    </tr>
-    <tr>
-      <td>
-        <h2>Confidance</h2>
-      </td>
-      <td id="confidance">
-      </td>
-    </tr>
-  </table>
-</center>
+    <table id="card" hidden style="width: 30%; margin-left: auto;margin-right: auto; padding-top: 3%;">
+      <tr>
+        <td>
+          <h2>Uploaded Image</h2>
+        </td>
+        <td id="result_image">
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <h2>Model Prediction</h2>
+        </td>
+        <td id="result"></td>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <h2>Confidance</h2>
+        </td>
+        <td id="confidance">
+        </td>
+      </tr>
+      <tr id="showImageType">
+        <td>
+          <h2>Image Type</h2>
+        </td>
+      </tr>
+      <tr id="showImageTypeInfo">
+        <td>
+          <h2>Image Type Info</h2>
+        </td>
+      </tr>
+    </table>
+  </center>
 
 
   <div class="loader" style="display: none; margin-left: auto; margin-right: auto;" id="loader"></div>
