@@ -61,7 +61,9 @@ const register = async () => {
 
 const logout = async () => {
 
-    await requestJson("GET", "users/logout.json")
+    await requestJson("POST", "users/logout.json",{
+        "email" : getLocalStorageValue("email")
+    })
 
     setLocalStorage("email", undefined)
     setLocalStorage("x-auth-token", undefined)

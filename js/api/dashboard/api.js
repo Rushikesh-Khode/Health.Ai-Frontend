@@ -14,7 +14,7 @@ const TumorTypeInfo = {
         "treatment": "Treatment options for meningiomas include observation (in case of small, asymptomatic tumors), surgery, radiation therapy, and in some cases, targeted therapies or chemotherapy."
     },
     "pituitary": {
-        "info": "Pituitary adenomas are tumors that develop in the pituitary gland, which is responsible for producing and regulating hormones that control various bodily functions.",
+        "info": "Pituitary adenomas are tumors that develop in the pituitary gland, which i s responsible for producing and regulating hormones that control various bodily functions.",
         "treatment": "Treatment options for pituitary adenomas include observation, medication, surgery (transsphenoidal surgery is a common approach), and radiation therapy, depending on the size, location, symptoms, and hormone levels."
     },
     "astrocitoma": {
@@ -79,7 +79,7 @@ const TumorTypeInfo = {
         Radiation therapy is often administered to the brain and spinal cord.
         Chemotherapy may be used before or after surgery, as well as during or after radiation therapy.`
     },
-    'neurocytoma': {
+    'neurocitoma': {
         'info': `Neurocytomas are rare tumors that develop from neuronal cells in the brain.
         They are typically slow-growing and often found in the ventricles of the brain.
         Neurocytomas can`,
