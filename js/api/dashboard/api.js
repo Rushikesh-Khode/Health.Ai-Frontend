@@ -17,7 +17,7 @@ const TumorTypeInfo = {
         "info": "Pituitary adenomas are tumors that develop in the pituitary gland, which is responsible for producing and regulating hormones that control various bodily functions.",
         "treatment": "Treatment options for pituitary adenomas include observation, medication, surgery (transsphenoidal surgery is a common approach), and radiation therapy, depending on the size, location, symptoms, and hormone levels."
     },
-    "astrocytoma": {
+    "astrocitoma": {
         "info": "Astrocytomas are tumors that originate from astrocytes, a type of glial cell in the brain and spinal cord,They are classified into different grades (I-IV) based on their appearance under the microscope and their aggressiveness.Low-grade astrocytomas (grade I and II) are typically slow-growing, while high-grade astrocytomas (grade III and IV) are more aggressive.Glioblastoma multiforme (GBM) is a common and highly malignant type of astrocytoma",
         "treatment": `Treatment for astrocytoma depends on the grade and location of the tumor.
         Low-grade astrocytomas may be treated with surgery to remove the tumor, followed by close monitoring or additional treatments as necessary.
@@ -71,7 +71,7 @@ const TumorTypeInfo = {
         They are typically formed in response to infections, immune responses, or foreign substances.
         Granulomas can be found in different tissues, such as the lungs (e.g., tuberculosis granuloma) or other organs, and may have various underlying causes.`
     },
-    'medulloblastoma': {
+    'meduloblastoma': {
         'info': `Medulloblastoma is a highly malignant brain tumor that primarily affects children.
         It typically arises in the cerebellum, the part of the brain responsible for coordination and balance.
         Medulloblastomas can spread to other parts of the central nervous system and require a combination of treatments, including surgery, radiation therapy, and chemotherapy.`,
@@ -79,7 +79,7 @@ const TumorTypeInfo = {
         Radiation therapy is often administered to the brain and spinal cord.
         Chemotherapy may be used before or after surgery, as well as during or after radiation therapy.`
     },
-    'eeurocytoma': {
+    'neurocytoma': {
         'info': `Neurocytomas are rare tumors that develop from neuronal cells in the brain.
         They are typically slow-growing and often found in the ventricles of the brain.
         Neurocytomas can`,
@@ -93,7 +93,7 @@ const TumorTypeInfo = {
         Oligodendrogliomas can be classified into different grades (II and III) based on their cellular characteristics and behavior.`,
         'treatment': `Treatment options for oligodendroglioma typically include surgery to remove the tumor, followed by radiation therapy and chemotherapy. The specific treatment plan depends on the tumor grade, location, and other factors.`
     },
-    'papilloma': {
+    'papiloma': {
         'info': `Papillomas are tumors characterized by the development of finger-like projections or papillae.
         In the context of brain tumors, choroid plexus papillomas are the most common type. They arise from the choroid plexus, a network of blood vessels in the brain that produces cerebrospinal fluid (CSF).
         Choroid plexus papillomas are most commonly found in children, usually in the ventricles of the brain.`,
